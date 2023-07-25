@@ -1,0 +1,22 @@
+main()
+{
+    funcionarioDao = new funcionarioDao;
+
+    funcionarioDao.insert(funcionaro)
+
+    print(funcionarioDao.list())
+
+    funcionarioDao.delete(cpf);
+
+    estoqueDAO = new estoqueDAO();
+
+    print(estoqueDAO.list_itens()); //por itens do estoque
+
+    print(estoqueDAO.list_lotes()); //por lotes de itens do estoque
+
+
+    estoqueDAO.requisites(id_item, quant_lostes);
+
+    
+
+}
