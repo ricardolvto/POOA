@@ -1,5 +1,7 @@
 package com.mercado.geral.Cliente;
 
-public class ClientFactory {
+public interface ClientFactory {
     
+    public Cliente criaCliente();
+
 }
