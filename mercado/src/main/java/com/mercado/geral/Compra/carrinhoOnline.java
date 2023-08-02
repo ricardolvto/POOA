@@ -5,7 +5,7 @@ import java.util.Vector;
 import com.mercado.geral.Cliente.Cliente;
 
 public class carrinhoOnline {
-    private Cliente cliente;
+    private Cliente_interface cliente;
     private Vector<itensCompra> listaCarrinho;
 
 
@@ -31,11 +31,11 @@ public class carrinhoOnline {
     }
     
 
-    public Cliente getCliente() {
+    public Cliente_interface getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(Cliente_interface cliente) {
         this.cliente = cliente;
     }
 }

@@ -1,6 +1,6 @@
 package com.mercado.geral.Cliente;
 
-public class Cartao {
+class Cartao {
     private String numero_cart;
     private String nome;
     private String cod_seguranca;

@@ -1,6 +1,6 @@
 package com.mercado.geral.Cliente;
 
-public class Premium extends Cliente {
+class Premium extends Cliente {
     private static float desconto;
     private static float mensalidade;
     

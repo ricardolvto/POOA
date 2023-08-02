@@ -1,5 +1,5 @@
 package com.mercado.controllersClient;
-import  com.mercado.geral.Cliente.CliPremiumFactory;
+import  com.mercado.geral.Cliente.*;
 
 public class controllerClienteP {
     

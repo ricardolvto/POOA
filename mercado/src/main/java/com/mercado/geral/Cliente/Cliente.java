@@ -8,8 +8,10 @@ public abstract class Cliente {
     private String cpf;
     private Vector<Cartao> CartaoList;
 
-    public Cliente(){};
-
+    public Cliente() {
+        this.nome = "joao";
+        this.cpf = "cpf";
+    }
     public String getNome() {
         return nome;
     }
