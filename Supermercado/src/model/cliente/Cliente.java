@@ -1,22 +1,34 @@
-package model.cliente;
+package model.cliente ;
 
 import java.util.Vector;
 
-class Cliente {
-	String nome;
-	int CPF;
-	Vector<Cartoes> cartoes;
-	
-	String getNome() {
-		return this.nome;
-	}
-	
-	Vector<Cartoes> getCartoes(){
-		return this.cartoes;
-	}
-	
-	void addCartao(Cartoes cartao) {
-		this.cartoes.add(cartao);
-	}
+public abstract class Cliente {
+
+    private String nome;
+    private String cpf;
+    private Vector<Cartao> CartaoList;
+
+    public Cliente() {
+        this.nome = "joao";
+        this.cpf = "cpf";
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getCpf() {
+        return cpf;
+    }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    public Vector<Cartao> getCartaoList() {
+        return CartaoList;
+    }
+    public void setCartaoList(Vector<Cartao> cartaoList) {
+        CartaoList = cartaoList;
+    }
 
 }

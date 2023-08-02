@@ -1,9 +1,17 @@
 package model.cliente;
 
-class Basic {
+class Basic extends Cliente{
+    private int pontos;
+ 
+    
 
-	public Basic() {
-		// TODO Auto-generated constructor stub
-	}
+    @Override
+    public int getPontos() {
+        return pontos;
+    }
 
+    @Override
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
 }
