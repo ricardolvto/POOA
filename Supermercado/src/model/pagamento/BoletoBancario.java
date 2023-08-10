@@ -1,24 +1,14 @@
 package model.pagamento;
 
-class BoletoBancario extends Pagamento{
+public class BoletoBancario extends Pagamento{
 	
-	BoletoBancario(){};
+	public BoletoBancario(){};
 
-	void inicia(float valor){
+	public void esperaPag(double valor){
 		System.out.println("Código do Boleto: 193819738934789274927433");
-		System.out.println("Para o valor: " + valor);
-		
+		System.out.println("Esperando o pagamento do boleto com o valor: " + valor);
 	}
-	void esperaPag(){
-		System.out.println("Esperando pagamento...");
-	}
-	void concluida(){
+	public void concluida(){
 		System.out.println("Pagamento Concluído! - Boleto pago com sucesso");
-	}
-
-	@Override
-	void esperaPag(double valorTotal) {
-		// TODO Auto-generated method stub
-		
 	}
 }

@@ -1,6 +1,6 @@
 package model.estoque;
 
-public class Item {
+class Item {
 	Long codigo;
 	String nome;
 	String descricao;
@@ -33,5 +33,20 @@ public class Item {
 	}
 	void indisponivel() {
 		this.disponivel = false;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+	
+	public void printItem() {//+"\n Valor:"
+		System.out.println("-----------------------------------");
+		System.out.println("Nome: "+this.nome);
+		System.out.println("Valor: "+this.valor);
+		System.out.println("Descrição: "+this.descricao);
+		if(this.disponivel)
+			System.out.println("Disponivel");
+		else
+			System.out.println("Indisponivel");
 	}
 }

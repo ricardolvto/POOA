@@ -4,5 +4,5 @@ import model.funcionario.*;
 
 class GastosComFuncionarios {
 	//falta implementar
-	FuncFactory operador = new FuncFactory();
+	iFuncFactory operador = new iFuncFactory();
 }

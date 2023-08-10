@@ -4,26 +4,29 @@ package model.estoque;
 
 import java.util.Vector;
 
-public class Estoque {
+class Estoque implements iEstoque{
+	
 	Vector<Item> item;
 	Vector<Lote> lote;
 	private static Estoque instancia;
 	
 	Estoque(){};
-	public static Estoque getInstancia() {
+	
+	public Estoque getInstancia() {
         if (instancia == null) {
         	instancia = new Estoque();
         }
         return instancia;
     }
 
+	@Override
 	public void addItem(Long code, String nome, String descricao, String fornecedor, double d) {
 		if(this.item == null) {this.item = new Vector<>();}
 		Item item = new Item(code, nome, descricao, fornecedor, d);
 		this.item.add(item);
 	}
-	
-	void addLote(int loteCode, Long code, String validade, int qnt) {
+
+	public void addLote(int loteCode, Long code, String validade, int qnt) {
 		if(this.lote == null) {this.lote = new Vector<>();}
 		Item novoItemdoLote = new Item();
 		
@@ -38,8 +41,8 @@ public class Estoque {
 		Lote lote = new Lote(loteCode, novoItemdoLote, validade, qnt);
 		this.lote.add(lote);
 	}
-	
-	String getNomeItem(Long code) {
+
+	public String getNomeItem(Long code) {
 			for (Item auxItem : this.item) {
 	            if (auxItem.getCode().equals(code)) {
 	            	return auxItem.nome;
@@ -47,8 +50,18 @@ public class Estoque {
 			}
         	return "";
 	}
-	
-	double getValorItem(Long code) {
+
+	public Item getItem(Long code) {
+			for (Item auxItem : this.item) {
+	            if (auxItem.getCode().equals(code)) {
+	            	return auxItem;
+	            }
+			}
+        	return null;
+	}
+
+
+	public double getValorItem(Long code) {
 		for (Item auxItem : this.item) {
             if (auxItem.getCode().equals(code)) {
             	return auxItem.valor;
@@ -57,18 +70,21 @@ public class Estoque {
     	return -1;
 		
 	}
-	
-	void printItens() {
+
+
+	public void printItens() {
+		for (Item auxItem : this.item) {
+            auxItem.printItem();
+		}
+	}
+
+
+	public void printLotes() {
+		for (Lote auxLote : this.lote) {
+			auxLote.printLote();
+		}
 		
 	}
-	
-	void printLotes() {
-		
-	}
-	
-	//void updateLote(int loteCode, int qnt) {
-		//Lote lote = new Lote(loteCode, novoItemdoLote, validade, qnt);
-		//this.lote.
-	//}
+
 
 }

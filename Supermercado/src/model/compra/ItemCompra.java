@@ -1,17 +1,24 @@
 package model.compra;
-import model.estoque.*;
+import model.estoque.iEstoque;
 
-public class ItemCompra {
-	Item item;
+class ItemCompra {
+	iEstoque item;
 	int quantia;
 	
-	public ItemCompra(Item item, int quantia) {
+	public ItemCompra(iEstoque item, int quantia) {
 		this.item = item;
 		this.quantia = quantia;
 	}
 	
 	public double getValor() {
-		return this.quantia * this.item.getValor();
+		return this.quantia * this.item.getValorItem();
+	}
+	
+	public double getValorItem() {
+		return this.quantia * this.item.getValorItem();
+	}
+	public String getNome() {
+		return this.item.getNomeItem();
 	}
 
 }

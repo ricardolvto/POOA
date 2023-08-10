@@ -16,5 +16,11 @@ class Lote {
 	int getCode() {
 		return this.loteCode;
 	}
+	
+	void printLote() {
+		this.item.printItem();
+		System.out.println("Validade: "+this.data);
+		System.out.println("Quantidade: "+this.quantidade);
+	}
 
 }
