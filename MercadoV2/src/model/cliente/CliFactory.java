@@ -1,5 +1,7 @@
 package model.cliente;
 
-public class CliFactory {
+public abstract class CliFactory {
+    
+    public abstract Cliente criaCliente();
 
 }

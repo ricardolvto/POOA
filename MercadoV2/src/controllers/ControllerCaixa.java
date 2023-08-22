@@ -49,7 +49,7 @@ public class ControllerCaixa {
 				qnt = ler.nextInt();
 				System.out.println("Informe o codigo:");
 				code = ler.toString();
-				Item item1 = estoque.getItem((String)code);
+				I_Item item1 = estoque.getItem((String)code);
 				if(item1 != null) {
 					venda.adicionaProduto((String)code, qnt);
 				}else {

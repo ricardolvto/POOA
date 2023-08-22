@@ -1,6 +1,6 @@
 package model.estoque;
 
-public class Item{
+public class Item implements I_Item{
 	String codigo;
 	String nome;
 	String descricao;
@@ -21,22 +21,27 @@ public class Item{
 		this.disponivel = false;
 	}
 	
+	@Override
 	public double getValor() {
 		return this.valor;
 	}
 
+	@Override
 	public String getCode() {
 		return this.codigo;
 	}
+	@Override
 	public boolean disponivel() {
 		return this.disponivel;
 	}
 
+	@Override
 	public String getNome() {
 		return this.nome;
 	}
 	
 	
+	@Override
 	public void printItem() {//+"\n Valor:"
 		System.out.println("-----------------------------------");
 		System.out.println("Nome: "+this.nome);

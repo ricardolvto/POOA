@@ -1,11 +1,11 @@
 package model.compra;
-import model.estoque.Item;
+import model.estoque.I_Item;
 
 class ItemCompra {
-	Item item;
+	I_Item item;
 	float quantia;
 	
-	public ItemCompra(Item item, float quantia) {
+	public ItemCompra(I_Item item, float quantia) {
 		this.item = item;
 		this.quantia = quantia;
 	}

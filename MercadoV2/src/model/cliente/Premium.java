@@ -1,22 +1,31 @@
 package model.cliente;
 
-import java.util.Vector;
+class Premium extends Cliente implements IPremium {
+    private float desconto;
+    private float mensalidade;
+    
+    @Override
+    public float getDesconto() {
+        return desconto;
+    }
+    @Override
+    public void setDesconto(float desconto) {
+        this.desconto = desconto;
+    }
+    @Override
+    public float getMensalidade() {
+        return mensalidade;
+    }
+    @Override
+    public  void setMensalidade(float mensalidade) {
+        this.mensalidade = mensalidade;
+    }
 
-class Premium extends Cliente{
-
-	public Premium() {
-	}
-
-	public String getNome() {
-		return this.nome;
-	}
-	
-	public Vector<Cartoes> getCartoes(){
-		return this.cartoes;
-	}
-	
-	void addCartao(Cartoes cartao) {
-		this.cartoes.add(cartao);
-	}
-
+    @Override
+    public void tipoCliente()
+    {
+        System.out.println("cliente_premium");
+    }
 }
+
+

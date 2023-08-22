@@ -1,23 +1,62 @@
-package model.cliente;
+package model.cliente ;
 
 import java.util.Vector;
 
-class Cliente implements iCliente{
-	String nome;
-	int CPF;
-	Vector<Cartoes> cartoes;
-	
-	public String getNome() {
-		return this.nome;
-	}
-	
-	public Vector<Cartoes> getCartoes(){
-		return this.cartoes;
-	}
-	
-	public void addCartao(int num, int val, int cvs) {
-		Cartoes cartao = new Cartoes(num, val, cvs);
-		this.cartoes.add(cartao);
-	}
+public abstract class Cliente implements iCliente{
+
+    private String nome;
+    private String cpf;
+    private Vector<Cartao> CartaoList;
+
+
+    @Override
+    public String getNome() {
+        return nome;
+    }
+    @Override
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    @Override
+    public String getCpf() {
+        return cpf;
+    }
+    @Override
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    @Override
+    public Vector<Cartao> getCartaoList() {
+        return CartaoList;
+    }
+    @Override
+    public void addCartao(Cartao cartao) {
+        this.CartaoList.addElement(cartao);
+    }
+
+    @Override
+    public void removeCartao(int numero_cart) {
+        this.CartaoList.remove(numero_cart);
+    }
+
+
+    @Override
+    public int getCartao(String numero_cart)
+    {
+        return CartaoList.indexOf(numero_cart);
+    }
+
+    @Override
+    public void tipoCliente()
+    {
+        System.out.println("cliente_generico");
+    }
+
+    @Override
+    public void setCartaoList(Vector<Cartao> lista)
+    {
+        this.CartaoList = lista;
+    }
+    
 
 }

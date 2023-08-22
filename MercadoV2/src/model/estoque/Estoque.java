@@ -26,7 +26,7 @@ public class Estoque{
 	
 	public boolean mudaQntItem(String code, double qnt){
 		int i=0;
-		for (Item auxItem : this.item) {
+		for (I_Item auxItem : this.item) {
 			
             if (auxItem.getCode().equals(code)) {
             	
@@ -60,8 +60,8 @@ public class Estoque{
         	return "";
 	}
 
-	public Item getItem(String code) {
-			for (Item auxItem : this.item) {
+	public I_Item getItem(String code) {
+			for (I_Item auxItem : this.item) {
 	            if (auxItem.getCode().equals(code)) {
 	            	return auxItem;
 	            }
@@ -69,6 +69,10 @@ public class Estoque{
         	return null;
 	}
 
+	public String getstock_completo()
+	{
+		return item.toString();
+	}
 
 	public double getValorItem(String code) {
 		for (Item auxItem : this.item) {
@@ -81,7 +85,7 @@ public class Estoque{
 
 
 	public void printItens() {
-		for (Item auxItem : this.item) {
+		for (I_Item auxItem : this.item) {
             auxItem.printItem();
 		}
 	}

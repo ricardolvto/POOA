@@ -1,22 +1,25 @@
 package model.cliente;
 
-import java.util.Vector;
+class Basic extends Cliente implements IBasic{
+    private int pontos;
+ 
+    public Basic() {
+        this.pontos = 0;
+    }
 
-class Basic extends Cliente{
+    @Override
+    public int getPontos() {
+        return pontos;
+    }
 
-	public Basic() {
-		
-	}
+    @Override
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
 
-	public String getNome() {
-		return this.nome;
-	}
-	
-	public Vector<Cartoes> getCartoes(){
-		return this.cartoes;
-	}
-	
-	void addCartao(Cartoes cartao) {
-		this.cartoes.add(cartao);
-	}
+    @Override
+    public void tipoCliente()
+    {
+        System.out.println("cliente_basico");
+    }
 }
