@@ -2,12 +2,18 @@ package model.cliente;
 
 public interface IPremium extends iCliente {
 
-    float getDesconto();
+    void setMensalidadePaga(boolean mensalidadePaga);
 
-    void setDesconto(float desconto);
+    double getDesconto();
 
-    float getMensalidade();
+    void setDesconto(double desconto);
 
-    void setMensalidade(float mensalidade);
+    double getMensalidade();
+
+    void setMensalidade(double mensalidade);
+
+    void tipoCliente();
+
+    boolean getMensalidadePaga();
 
 }

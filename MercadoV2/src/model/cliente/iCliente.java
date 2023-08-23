@@ -2,6 +2,8 @@ package model.cliente;
 
 import java.util.Vector;
 
+import model.compra.CarrinhoOnline;
+
 public interface iCliente {
 
     public String getNome();
@@ -20,8 +22,10 @@ public interface iCliente {
 
     public void tipoCliente();
 
-    public void removeCartao(int numero_cart);
+    public void removeCartao(Cartao cartao);
 
-    public int getCartao(String numero_cart);
+    public Cartao getCartao(String numero_cart);
+
+    public CarrinhoOnline getCarrinho();
 
 }

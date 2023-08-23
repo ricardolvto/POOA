@@ -45,15 +45,7 @@ public abstract class ControllerCliente {
 		pagamento.iniciaPagamento(valor, venda);
 	}
 
-	
-
-	public void vizualizarEstoque() {
-		Estoque estoque = Estoque.getInstancia();
-		System.out.println(estoque.getstock_completo());
-
-	}
-
-	public void CadastroCliente(IBasic cliente) {
+	public void CadastroCliente(iCliente cliente) {
         System.out.println("informe nome:");
         cliente.setNome(inpt.nextLine());
         System.out.println("informe cpg:");

@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author anael
- *
- */
-module Supermercado {
-}

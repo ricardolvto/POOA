@@ -8,7 +8,7 @@ public class CliPremiumFactory extends CliFactory{
     }
 
     
-    public Premium criaCliente(IBasic cliente)
+    public IPremium criaCliente(IBasic cliente)
     {
         Premium cliente_novo = new Premium();
         cliente_novo.setCpf(cliente.getCpf());

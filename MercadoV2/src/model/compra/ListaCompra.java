@@ -13,4 +13,8 @@ class ListaCompra {
 		this.lista.add(item);
 	}
 
+	public void removeItem(int index) {
+		this.lista.remove(index);
+	}
+
 }

@@ -21,7 +21,7 @@ public abstract class Pagamento{
 	
 	public final void confirma(Venda venda){
 		Scanner inpt = new Scanner(System.in);
-		System.out.println("cancelar compra? 0(CANCELAR	) 1(cONFIRMAR)");
+		System.out.println("cancelar compra? 0(CANCELAR) 1(cONFIRMAR)");
 		int x = inpt.nextInt();
 		if(x == 1)
 		venda.setStatus(true);
