@@ -13,6 +13,8 @@ public class ControllerClienteP extends ControllerCliente{
         return factory.criaCliente();
     }
 
+
+    
     public void PagarMensalidade(IPremium cliente)
     {
         cliente.setMensalidadePaga(true);
