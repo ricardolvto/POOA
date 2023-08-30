@@ -1,11 +1,12 @@
 package model.compra;
 import model.cliente.*;
+import java.util.Vector;
 
 public class CarrinhoOnline {
 		iCliente cliente;
 		ListaCompra listaCompra;
 		
-		public CarrinhoOnline(iCliente cliente){
+		CarrinhoOnline(iCliente cliente){
 			this.cliente = cliente;
 			this.listaCompra = new ListaCompra();
 		}

@@ -12,6 +12,6 @@ public class ControllerOrgEstoque {
 		
 		Estoque estoque = Estoque.getInstancia();
 		
-		estoque.addItem(code, nome, descricao, fornecedor, d);
+		estoque.addItem(code, nome, descricao, fornecedor, 1, d, 1);
 	}
 }

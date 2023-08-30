@@ -14,7 +14,6 @@ public class Dinheiro extends Pagamento{
 		System.out.println("Pagamento no valor: " + valor);
 		System.out.println("Total entregue:  " + a);
 		System.out.println("Troco:  " + (a - valor));
-		ler.close();
 	}
 	public void concluida(){
 		System.out.println("Pagamento Concluído! - Pix feito com sucesso");

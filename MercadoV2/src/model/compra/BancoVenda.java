@@ -30,8 +30,11 @@ public class BancoVenda {
 	}
 	
 	public void printVendas() {
+		int i = 1;
 		for (Venda auxVenda : this.listaVenda) {
+			System.out.println("\n| - Venda nº" + i + " -");
             auxVenda.printaProdutos();
+            i++;
 		}
 	}
 

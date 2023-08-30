@@ -18,25 +18,34 @@ public class Estoque{
         return instancia;
     }
 
-	public void addItem(String code, String nome, String descricao, String fornecedor, double d) {
+	public void addItem(String code, String nome, String descricao, String fornecedor, int tipo, double d, double qnt) {
 		if(this.item == null) {this.item = new Vector<>();}
-		Item item = new Item(code, nome, descricao, fornecedor, d);
-		this.item.add(item);
+		
+		if(tipo == 1) {
+			Item item = new Unitario(code, nome, descricao, fornecedor, iTipo.UNITARIO, d, (int)qnt);
+			this.item.add(item);
+		}
+		
+		else if(tipo == 2) {
+			Item item = new PorKG(code, nome, descricao, fornecedor, iTipo.PORKG, d, qnt);
+			this.item.add(item);
+		}
+		else {System.out.println("\nTipo inválido!");}
 	}
 	
 	public boolean mudaQntItem(String code, double qnt){
 		int i=0;
-		for (I_Item auxItem : this.item) {
+		for (Item auxItem : this.item) {
 			
             if (auxItem.getCode().equals(code)) {
             	
-            	if(this.item.get(i).quantia+qnt>0) {
-        			this.item.get(i).quantia += qnt;
+            	if(this.item.get(i).getQnt()+qnt>0) {
+        			this.item.get(i).addQnt(qnt);
         			this.item.get(i).disponivel = true;
         			return true;
 
-        		}else if(this.item.get(i).quantia+qnt == 0) {
-        			this.item.get(i).quantia += qnt;
+        		}else if(this.item.get(i).getQnt()+qnt == 0) {
+        			this.item.get(i).addQnt(qnt);
         			this.item.get(i).disponivel = false;
         			return true;
         			
@@ -50,6 +59,16 @@ public class Estoque{
 		return false;
 		
 	}
+	
+	boolean verificaItem(String code) {
+		for (Item auxItem : this.item) {
+            if (auxItem.getCode().equals(code)) {
+            	if(auxItem.getQnt() > 0) return true;
+            	else return false;
+            }
+		}
+    	return false;
+}
 
 	public String getNomeItem(String code) {
 			for (Item auxItem : this.item) {
@@ -60,19 +79,24 @@ public class Estoque{
         	return "";
 	}
 
-	public I_Item getItem(String code) {
-			for (I_Item auxItem : this.item) {
+	public Item getItem(String code) {
+			for (Item auxItem : this.item) {
 	            if (auxItem.getCode().equals(code)) {
 	            	return auxItem;
 	            }
 			}
         	return null;
 	}
+	
+	public boolean existe(String code) {
+		for (Item auxItem : this.item) {
+            if (auxItem.getCode().equals(code)) {
+            	return true;
+            }
+		}
+    	return false;
+}
 
-	public String getstock_completo()
-	{
-		return item.toString();
-	}
 
 	public double getValorItem(String code) {
 		for (Item auxItem : this.item) {
@@ -85,7 +109,7 @@ public class Estoque{
 
 
 	public void printItens() {
-		for (I_Item auxItem : this.item) {
+		for (Item auxItem : this.item) {
             auxItem.printItem();
 		}
 	}

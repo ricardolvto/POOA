@@ -26,19 +26,36 @@ public class BancoFunc {
 
 	public double getSalFuncs() {
 		double total = 0;
-		for (Funcionario auxFunc : this.listaFunc) {
-            total += auxFunc.getSalario();
+		if(this.listaFunc != null) {
+			for (Funcionario auxFunc : this.listaFunc) {
+	            total += auxFunc.getSalario();
+			}
 		}
-    	return total;
+	    return total;
 	}
 
 
 	public void printFuncionarios() {
 		for (Funcionario auxFunc : this.listaFunc) {
-            System.out.print("|------------------------------------------------------------");
-            System.out.print("|Nome: " + auxFunc.getNome());
-            System.out.print("|Cargo: " + auxFunc.getCargo());
-            System.out.print("|Salario: " + auxFunc.getSalario());
+            System.out.print("\n|------------------------------------------------------------");
+            System.out.print("\n|Nome: " + auxFunc.getNome());
+            System.out.print("\n|Cargo: " + auxFunc.getCargo());
+            System.out.print("\n|Salario: " + auxFunc.getSalario());
 		}
+	}
+
+	public boolean printFuncionario(int cpf) {
+		if(this.listaFunc!=null) {
+			for (Funcionario auxFunc : this.listaFunc) {
+					if(auxFunc.getCPF() == cpf) {
+		            System.out.print("\n|------------------------------------------------------------");
+		            System.out.print("\n|Nome: " + auxFunc.getNome());
+		            System.out.print("\n|Cargo: " + auxFunc.getCargo());
+		            System.out.print("\n|Salario: " + auxFunc.getSalario());
+		            return true;
+	            }
+			}
+		}
+		return false;
 	}
 }

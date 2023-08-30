@@ -16,7 +16,8 @@ public class BancoContas {
         return instancia;
     }
 
-	public void addConta(Contas conta) {
+	public void addConta(int codigo, double valor, boolean paga, String data, String nomeConta) {
+		Contas conta = new Contas(codigo, valor, paga, data, nomeConta);
 		if(this.listaContas == null) {this.listaContas = new Vector<>();}
 		this.listaContas.add(conta);
 	}
@@ -24,8 +25,10 @@ public class BancoContas {
 
 	public double getTotalContas() {
 		double total = 0;
-		for (Contas auxConta : this.listaContas) {
-            total += auxConta.valor;
+		if(this.listaContas != null) {
+			for (Contas auxConta : this.listaContas) {
+		        total += auxConta.valor;
+			}
 		}
     	return total;
 	}

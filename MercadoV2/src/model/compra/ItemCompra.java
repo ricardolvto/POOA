@@ -1,13 +1,17 @@
 package model.compra;
-import model.estoque.I_Item;
+import model.estoque.Item;
 
 class ItemCompra {
-	I_Item item;
-	float quantia;
+	Item item;
+	double quantia;
 	
-	public ItemCompra(I_Item item, float quantia) {
+	public ItemCompra(Item item, double qnt) {
 		this.item = item;
-		this.quantia = quantia;
+		if(this.item.getTipo() == 1) {
+			int i = (int)qnt;
+			this.quantia = i;}
+		else if (this.item.getTipo() == 2)
+			this.quantia = qnt;
 	}
 	
 	public double getValor(String code) {

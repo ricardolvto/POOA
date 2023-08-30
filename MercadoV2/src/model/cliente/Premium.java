@@ -1,44 +1,22 @@
 package model.cliente;
 
-class Premium extends Cliente implements  IPremium {
-    private double desconto = 0.10;
-    private double mensalidade = 59.9;
-    private boolean status;
-    
-    @Override
-    public double getDesconto() {
-        return desconto;
-    }
-    @Override
-    public void setDesconto(double desconto) {
-        this.desconto = desconto;
-    }
-    @Override
-    public double getMensalidade() {
-        return mensalidade;
-    }
-    @Override
-    public  void setMensalidade(double mensalidade) {
-        this.mensalidade = mensalidade;
-    }
+import java.util.Vector;
 
-    @Override
-    public void tipoCliente()
-    {
-        System.out.println("cliente_premium");
-    }
+class Premium extends Cliente{
 
-    @Override
-    public void setMensalidadePaga(boolean mensalidadePaga)
-    {
-        this.status = mensalidadePaga;
-    }
+	public Premium() {
+	}
 
-    @Override
-    public boolean getMensalidadePaga()
-    {
-        return this.status;
-    }
+	public String getNome() {
+		return this.nome;
+	}
+	
+	public Vector<Cartoes> getCartoes(){
+		return this.cartoes;
+	}
+	
+	void addCartao(Cartoes cartao) {
+		this.cartoes.add(cartao);
+	}
+
 }
-
-

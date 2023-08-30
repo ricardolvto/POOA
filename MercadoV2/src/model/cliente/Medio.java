@@ -2,9 +2,9 @@ package model.cliente;
 
 import java.util.Vector;
 
-class Basic extends Cliente{
+class Medio extends Cliente{
 
-	public Basic() {
+	public Medio() {
 		
 	}
 
@@ -20,3 +20,4 @@ class Basic extends Cliente{
 		this.cartoes.add(cartao);
 	}
 }
+

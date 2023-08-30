@@ -1,13 +1,13 @@
 package model.pagamento;
 
-import model.cliente.Cartao;
-
 class CartaoOnline extends Pagamento{
 	
 	CartaoOnline(){};
 
-	void inicia(Cartao cartao, double valor){
-		System.out.println("Cartao" + cartao.getNumero_cart() +": " + valor);
+	void inicia(float valor){
+		System.out.println("Insira o Cartao na maquininha...");
+		System.out.println("Para o valor: " + valor);
+		
 	}
 	void esperaPag(){
 		System.out.println("Esperando a resposta da maquininha...");

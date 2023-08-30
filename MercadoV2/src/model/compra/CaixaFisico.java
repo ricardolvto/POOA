@@ -1,5 +1,8 @@
 package model.compra;
 
+import java.util.Scanner;
+
+import model.funcionario.*;
 
 public class CaixaFisico {
 	    private boolean aberto;
@@ -7,9 +10,20 @@ public class CaixaFisico {
 	    private int nun_caixa;
 
 	    public CaixaFisico() {};
-	    public boolean cadastrar_entrada(Long code)
+	    public boolean cadastrar_entrada()
 	    {
-	    	System.out.println("Operador " + code + " entrou com sucesso...");
+		    Scanner ler = new Scanner(System.in);
+		    int a; boolean b = false;
+		    BancoFunc bf = BancoFunc.getInstancia();
+		    
+		    while(!b){
+				System.out.println("Por favor informe seu ID:");
+				a = ler.nextInt();
+		    	if(bf.printFuncionario(a)) {
+		    		return true;
+		    	}
+		    	System.out.println("O funcionário não existe!");
+	    	}
 	        return true;
 	    }
 
