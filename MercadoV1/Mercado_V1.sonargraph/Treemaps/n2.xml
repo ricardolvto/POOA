@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<treeMap version="13.0.1.802" leafElement="physicalComponent">
+	<sizeSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsdMetric" provider="Core" id="LinesOfCode"></sizeSource>
+	<colorSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsdMetric" provider="Core" id="ComponentRankSystem"></colorSource>
+	<heightSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsdMetric" provider="Core" id="IncomingDependenciesSystem"></heightSource>
+</treeMap>
